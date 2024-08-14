@@ -8,12 +8,14 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+const isGHPages = true;
+
 module.exports = {
   entry: path.resolve(__dirname, "..", "./src/index.tsx"),
   output: {
     path: path.resolve(__dirname, "..", "dist"),
     filename: "bundle.js",
-    publicPath: '/',
+    publicPath: isGHPages ? 'tt-employee-control-12-8-2024' : '/',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
