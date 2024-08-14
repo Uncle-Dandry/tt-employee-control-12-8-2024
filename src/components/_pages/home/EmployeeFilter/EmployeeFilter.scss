@@ -1,3 +1,7 @@
+@use 'styles/_breakpoints' as breakpoints;
+
+@use 'styles/_mixins' as mixins;
+
 .employee-filter {
   margin: 40px auto 5px;
   padding: 1rem;
@@ -8,6 +12,11 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @include mixins.responsive(breakpoints.$breakpoint-xs) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   &__select {
     padding: 0.5rem 2rem 0.5rem 1rem;
@@ -49,5 +58,34 @@
     .employee-filter__checkbox:focus {
       outline: none;
     }
+  }
+
+  &__button {
+    height: 37px;
+    margin-right: auto;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include mixins.responsive(breakpoints.$breakpoint-xs) {
+      width: 184px;
+    }
+  }
+
+  &__link {
+    max-width: 150px;
+    height: 37px;
+    margin-right: auto;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
 }

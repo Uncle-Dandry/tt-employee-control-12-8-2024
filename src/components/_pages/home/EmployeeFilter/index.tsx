@@ -3,6 +3,7 @@ import React, {
   memo,
   useCallback,
 } from 'react';
+import { Link } from 'react-router-dom';
 
 import type { EmployeeRole } from 'types';
 
@@ -28,6 +29,18 @@ const EmployeeFilter: FC = () => {
 
   return (
     <div className="employee-filter">
+      <button
+        className="employee-filter__button"
+        type="button"
+      >
+        <Link
+          className="employee-filter__link"
+          to="/employee"
+        >
+          Добавить
+        </Link>
+      </button>
+
       <select
         className="employee-filter__select"
         value={role}

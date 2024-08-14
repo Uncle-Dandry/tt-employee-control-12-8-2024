@@ -12,6 +12,7 @@ import store from 'store';
 
 import HomePage from 'pages/HomePage';
 import EmployeePage from 'pages/EmployeePage';
+import CreateEmployeePage from 'pages/CreateEmployeePage';
 
 import 'styles/globals.scss';
 
@@ -22,6 +23,7 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/employee/:id" element={<EmployeePage />} />
+          <Route path="/employee" element={<CreateEmployeePage />} />
         </Routes>
       </Router>
     </Provider>

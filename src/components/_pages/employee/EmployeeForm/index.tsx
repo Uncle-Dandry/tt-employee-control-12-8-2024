@@ -12,7 +12,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import type { Employee, FormErrors } from 'types';
 
 import { useAppDispatch, useAppSelector } from 'store/hooks';
-import { setEmployees, updateEmployee } from 'store/components/slices/employeeSlice';
+import {
+  setEmployees,
+  updateEmployee,
+  addEmployee,
+} from 'store/components/slices/employeeSlice';
 
 import {
   DateRegex,
@@ -34,7 +38,7 @@ const EmployeeForm: FC = () => {
   );
 
   const [formData, setFormData] = useState<Employee>(employee || {
-    id: 0,
+    id: id ? Number(id) : employees.length + 1,
     name: '',
     isArchive: false,
     role: 'cook',
@@ -117,11 +121,17 @@ const EmployeeForm: FC = () => {
       e.preventDefault();
 
       if (validate()) {
-        dispatch(updateEmployee(formData));
+        if (id) {
+          dispatch(updateEmployee(formData));
+        } else {
+          dispatch(addEmployee(formData));
+        }
+
         navigate('/');
       }
     },
     [
+      id,
       formData,
       dispatch,
       navigate,

@@ -20,6 +20,7 @@ const employeeSlice = createSlice({
   reducers: {
     addEmployee: (state, action: PayloadAction<Employee>) => {
       state.employees.push(action.payload);
+      state.filteredEmployees.push(action.payload);
     },
     updateEmployee: (state, action: PayloadAction<Employee>) => {
       state.employees = state.employees.map(emp =>

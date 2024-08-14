@@ -1,3 +1,7 @@
+@use 'styles/_breakpoints' as breakpoints;
+
+@use 'styles/_mixins' as mixins;
+
 .employee-form {
   display: flex;
   flex-direction: column;
