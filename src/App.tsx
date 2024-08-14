@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 
 import store from 'store';
 
+import NotFound from 'pages/NotFound';
 import HomePage from 'pages/HomePage';
 import EmployeePage from 'pages/EmployeePage';
 import CreateEmployeePage from 'pages/CreateEmployeePage';
@@ -26,6 +27,7 @@ const App: FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/employee/:id" element={<EmployeePage />} />
           <Route path="/employee" element={<CreateEmployeePage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
