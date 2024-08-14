@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "..", "dist"),
     filename: "bundle.js",
-    publicPath: isGHPages ? 'tt-employee-control-12-8-2024' : '/',
+    publicPath: isGHPages ? '/tt-employee-control-12-8-2024/' : '/',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
