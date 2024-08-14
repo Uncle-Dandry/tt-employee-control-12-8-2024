@@ -1,21 +1,29 @@
-import React from 'react';
+import React, {
+  type FC,
+} from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from 'store';
 
 import HomePage from 'pages/HomePage';
-
-import { Route } from 'components/ReactRouter';
+import EmployeePage from 'pages/EmployeePage';
 
 import 'styles/globals.scss';
 
-import './App.scss';
-
-const App = () => {
+const App: FC = () => {
   return (
     <Provider store={store}>
-      <Route path="/" component={HomePage} />
-      <Route path="/about" component={HomePage} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/employee/:id" element={<EmployeePage />} />
+        </Routes>
+      </Router>
     </Provider>
   );
 };

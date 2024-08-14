@@ -15,3 +15,5 @@ export interface Employee {
 export type SortOption = 'name' | 'birthday';
 
 export type SortDirection = 'asc' | 'desc';
+
+export type FormErrors = Record<string, string>;

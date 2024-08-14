@@ -4,6 +4,8 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import type {
   Employee,
@@ -13,20 +15,16 @@ import type {
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { setEmployees } from 'store/components/slices/employeeSlice';
 import { setSort, setSortDirection } from 'store/components/slices/employeeSortFilterSlice';
+import { selectFilteredEmployees } from 'store/components/selector';
 
-import { filterEmployees, parseDate } from 'utils';
-
-import { Link } from 'components/ReactRouter';
+import { parseDate } from 'utils';
 
 import employeeData from 'employees.json';
 
 import './EmployeeTable.scss';
 
 const EmployeeTable: FC = () => {
-  const filteredEmployees = useAppSelector((state) => {
-    const { role, isArchived } = state.employeeSortFilter;
-    return filterEmployees(state.employees.filteredEmployees, role, isArchived);
-  });
+  const filteredEmployees = useSelector(selectFilteredEmployees);
 
   const {
     sort: sortBy,
@@ -37,11 +35,13 @@ const EmployeeTable: FC = () => {
 
   useEffect(
     () => {
-      dispatch(setEmployees(
-        employeeData as unknown as Employee[],
-      ));
+      if (filteredEmployees.length === 0) {
+        dispatch(setEmployees(
+          employeeData as unknown as Employee[],
+        ));
+      }
     },
-    [dispatch],
+    [filteredEmployees, dispatch],
   );
 
   const sortedEmployees = useMemo(

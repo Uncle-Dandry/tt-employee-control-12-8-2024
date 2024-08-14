@@ -2,7 +2,7 @@
 
 @use 'styles/_mixins' as mixins;
 
-.home-page__root {
+.employee-page__root {
   width: 100%;
   height: 100%;
   padding: 0 70px;
@@ -19,11 +19,12 @@
   }
 }
 
-.home-page__content {
+.employee-page__content {
   width: 100%;
   max-width: 1216px;
 }
 
-.home-page__title {
-  margin-top: 40px;
+.employee-page__title {
+  margin: 40px 0;
+  font-size: 28px;
 }

@@ -25,6 +25,9 @@ const employeeSlice = createSlice({
       state.employees = state.employees.map(emp =>
         emp.id === action.payload.id ? action.payload : emp
       );
+      state.filteredEmployees = state.filteredEmployees.map(emp =>
+        emp.id === action.payload.id ? action.payload : emp
+      );
     },
     setEmployees: (state, action: PayloadAction<Employee[]>) => {
       state.employees = action.payload;
