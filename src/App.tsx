@@ -17,7 +17,7 @@ import CreateEmployeePage from 'pages/CreateEmployeePage';
 
 import 'styles/globals.scss';
 
-const basename = process.env.PUBLIC_URL || '';
+const basename = '/tt-employee-control-12-8-2024' || process.env.PUBLIC_URL || '';
 
 const App: FC = () => {
   return (
@@ -27,6 +27,7 @@ const App: FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/employee/:id" element={<EmployeePage />} />
           <Route path="/employee" element={<CreateEmployeePage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
