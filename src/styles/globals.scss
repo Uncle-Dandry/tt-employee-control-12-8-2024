@@ -1,0 +1,68 @@
+@import 'colors';
+@import 'breakpoints';
+@import 'variables';
+
+@import 'mixins';
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html {
+  background-color: $white-color;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $blackcolor;
+  overflow-x: hidden !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  color: $blackcolor !important;
+  caret-color: $pure-black-color;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: $blackcolor;
+  transition: background-color 5000000s ease-in-out 0s;
+}
+
+a {
+  text-decoration: none;
+}
+
+a[href^=tel] {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  font-family: $font-family;
+  color: inherit;
+  border: none;
+  background: transparent;
+  transition: opacity 0.3s;
+}

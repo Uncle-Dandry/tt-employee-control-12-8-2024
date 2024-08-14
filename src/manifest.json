@@ -1,0 +1,8 @@
+{
+  "short_name": "TecTask App",
+  "name": "Employee control system",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
