@@ -83,6 +83,9 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "..", "./src/index.html"),
     }),
