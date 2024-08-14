@@ -27,7 +27,6 @@ const App: FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/employee/:id" element={<EmployeePage />} />
           <Route path="/employee" element={<CreateEmployeePage />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
