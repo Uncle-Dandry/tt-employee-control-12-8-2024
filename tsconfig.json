@@ -28,6 +28,9 @@
     "**/*.ts",
     "*.d.ts",
     "src/**/*.d.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
     "global.d.ts"
-  ]
+, "jest.config.js"  ],
+  "exclude": ["node_modules"]
 }

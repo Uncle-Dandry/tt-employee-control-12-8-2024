@@ -37,7 +37,7 @@ module.exports = {
         ],
         exclude: [
           /node_modules/,
-          sassModuleRegex, // Exclude CSS modules if they are handled separately
+          sassModuleRegex,
         ],
       },
       {

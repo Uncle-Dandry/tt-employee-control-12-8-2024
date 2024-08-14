@@ -12,7 +12,8 @@
     "start-build": "webpack serve --config webpack/webpack.config.js --env env=prod",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -26,7 +27,10 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
+    "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
     "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -42,6 +46,7 @@
     "sass-resources-loader": "^2.2.5",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.10",
+    "ts-jest": "^29.2.4",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
     "uglify-js": "^3.19.2",
