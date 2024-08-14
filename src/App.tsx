@@ -16,10 +16,12 @@ import CreateEmployeePage from 'pages/CreateEmployeePage';
 
 import 'styles/globals.scss';
 
+const basename = process.env.PUBLIC_URL || '';
+
 const App: FC = () => {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={basename}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/employee/:id" element={<EmployeePage />} />
