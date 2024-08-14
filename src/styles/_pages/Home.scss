@@ -1,0 +1,33 @@
+@use 'styles/_breakpoints' as breakpoints;
+
+@use 'styles/_mixins' as mixins;
+
+.home-page__root {
+  width: 100%;
+  height: 100%;
+  padding: 0 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include mixins.responsive(breakpoints.$breakpoint-sm) {
+    padding: 0 20px;
+  }
+
+  @include mixins.responsive(breakpoints.$breakpoint-xs) {
+    padding: 0 17px;
+  }
+
+  @include mixins.responsive(breakpoints.$breakpoint-xxs) {
+    padding: 0 16px;
+  }
+}
+
+.home-page__content {
+  width: 100%;
+  max-width: 1216px;
+}
+
+.home-page__title {
+  margin-top: 40px;
+}

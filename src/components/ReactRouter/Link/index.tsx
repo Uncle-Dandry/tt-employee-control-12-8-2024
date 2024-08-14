@@ -4,10 +4,12 @@ import React, {
 } from 'react';
 
 interface LinkProps {
+  className?: string;
   to: string;
 }
 
 const Link: FC<PropsWithChildren<LinkProps>> = ({
+  className = '',
   to,
   children,
 }) => {
@@ -20,7 +22,11 @@ const Link: FC<PropsWithChildren<LinkProps>> = ({
   };
 
   return (
-    <a href={to} onClick={preventReload}>
+    <a
+      className={className}
+      href={to}
+      onClick={preventReload}
+    >
       {children}
     </a>
   );

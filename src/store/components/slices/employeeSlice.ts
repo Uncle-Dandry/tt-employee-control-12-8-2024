@@ -1,22 +1,17 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-export interface Employee {
-  isArchive: boolean;
-  id: number;
-  name: string;
-  role: 'cook' | 'waiter' | 'driver';
-  phone: string;
-  birthday: string;
-}
+import type { Employee } from 'types';
 
 interface EmployeeState {
   isLoading: boolean;
   employees: Employee[];
+  filteredEmployees: Employee[];
 }
 
 const initialState: EmployeeState = {
   isLoading: false,
   employees: [],
+  filteredEmployees: [],
 };
 
 const employeeSlice = createSlice({
@@ -31,9 +26,21 @@ const employeeSlice = createSlice({
         emp.id === action.payload.id ? action.payload : emp
       );
     },
+    setEmployees: (state, action: PayloadAction<Employee[]>) => {
+      state.employees = action.payload;
+      state.filteredEmployees = [...action.payload];
+    },
+    setFilteredEmployees: (state, action: PayloadAction<Employee[]>) => {
+      state.filteredEmployees = action.payload;
+    },
   },
 });
 
-export const { addEmployee, updateEmployee } = employeeSlice.actions;
+export const {
+  addEmployee,
+  updateEmployee,
+  setEmployees,
+  setFilteredEmployees,
+} = employeeSlice.actions;
 
 export default employeeSlice.reducer;
