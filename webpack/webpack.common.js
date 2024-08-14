@@ -88,6 +88,11 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './404.html', to: '404.html' }, // Копирует файл 404.html в корень папки сборки
+      ],
+    }),
   ],
   devServer: {
     static: path.resolve(__dirname, "..", "dist"),
